@@ -1,0 +1,44 @@
+apiVersion: v1
+entries:
+  cluster-addons:
+  - apiVersion: v2
+    appVersion: d7ab954
+    created: "2024-05-06T07:54:33.27180591Z"
+    description: Helm chart that deploys cluster addons for a CAPI cluster.
+    digest: 98dabd5dd8effbde7032613b52355e42d80fe248fdf9c8e22105d1c505196ae9
+    name: cluster-addons
+    type: application
+    urls:
+    - cluster-addons-0.1.0-dev.0.main.697.tgz
+    version: 0.1.0-dev.0.main.697
+  etcd-defrag:
+  - apiVersion: v2
+    appVersion: d7ab954
+    created: "2024-05-06T07:54:33.272112631Z"
+    description: Helm chart for deploying a cronjob to do etcd defragmentation on
+      a kubeadm cluster.
+    digest: ecfbb18961f1b20ce81b311cc490da621acb474918b59b8b8129a2527a17657b
+    name: etcd-defrag
+    type: application
+    urls:
+    - etcd-defrag-0.1.0-dev.0.main.697.tgz
+    version: 0.1.0-dev.0.main.697
+  openstack-cluster:
+  - apiVersion: v2
+    appVersion: d7ab954
+    created: "2024-05-06T07:54:33.275980809Z"
+    dependencies:
+    - alias: addons
+      condition: addons.enabled
+      name: cluster-addons
+      repository: file://../cluster-addons
+      version: '>=0-0'
+    description: Helm chart for deploying a cluster on an OpenStack cloud using Cluster
+      API.
+    digest: d5e5b6b74f0e2d5902628efd573a1229874e3c627df193eb00c9d0ba0945b7ba
+    name: openstack-cluster
+    type: application
+    urls:
+    - openstack-cluster-0.1.0-dev.0.main.697.tgz
+    version: 0.1.0-dev.0.main.697
+generated: "2024-05-06T07:54:33.270199318Z"
